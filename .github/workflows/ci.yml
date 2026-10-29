@@ -1,0 +1,28 @@
+name: Check
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - run: npm install --global pnpm@11.25.0
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm test
+      - run: node bin/readmecheck.js --all --format github
+      - run: pnpm pack --out readmecheck-0.1.0.tgz
+      - run: pnpm pack:check
+      - run: npm install --global ./readmecheck-0.1.0.tgz
+      - run: readmecheck README.md --format json

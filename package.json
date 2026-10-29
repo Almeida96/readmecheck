@@ -1,0 +1,39 @@
+{
+  "name": "@almeida96/readmecheck",
+  "version": "0.1.0",
+  "description": "Check local Markdown links, images, anchors, and required sections before pushing.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Igor Almeida",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Almeida96/readmecheck.git"
+  },
+  "bin": {
+    "readmecheck": "./bin/readmecheck.js"
+  },
+  "exports": "./src/index.js",
+  "files": [
+    "src",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.mjs",
+    "pack:check": "node scripts/check-package.mjs"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "dependencies": {
+    "github-slugger": "2.0.0",
+    "parse5": "8.0.1",
+    "remark-frontmatter": "5.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-parse": "11.0.0",
+    "unified": "11.0.5"
+  }
+}
