@@ -20,6 +20,7 @@
     "src",
     "bin",
     "README.md",
+    "CONTRIBUTING.md",
     "LICENSE"
   ],
   "scripts": {

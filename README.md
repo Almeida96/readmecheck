@@ -1,5 +1,7 @@
 # ReadmeCheck
 
+[![CI](https://github.com/Almeida96/readmecheck/actions/workflows/ci.yml/badge.svg)](https://github.com/Almeida96/readmecheck/actions/workflows/ci.yml)
+
 Find broken local links, missing images, wrong filename case, and stale heading anchors in Markdown before pushing to GitHub. Runs offline and reports the file, line, and column of each finding.
 
 ## Install
@@ -107,7 +109,7 @@ pnpm test
 node bin/readmecheck.js --all
 ```
 
-Tests create isolated repositories and cover reference syntax, anchors, filename case, traversal, symlinks, reports, exit codes, and tracked-file discovery. See [the changelog](CHANGELOG.md) for releases.
+Tests create isolated repositories and cover reference syntax, anchors, filename case, traversal, symlinks, reports, exit codes, and tracked-file discovery. See [the contribution guide](CONTRIBUTING.md) for regression-test expectations and [the changelog](CHANGELOG.md) for releases.
 
 ## License
 
